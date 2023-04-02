@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "name": "datastructure-algorithm",
+  "version": "1.0.0",
+  "description": "learning datastructure and algorithms",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
