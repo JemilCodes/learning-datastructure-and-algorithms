@@ -21,7 +21,7 @@ class MyArray {
 
 const newArray = new MyArray();
 newArray.push("hello world");
-newArray.get(0);
+newArray.getItem(0);
 // newArray.pop();
 // newArray.push("hello world2");
 // newArray.push("hello world3");
