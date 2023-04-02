@@ -17,12 +17,16 @@ class MyArray {
   getItem(index) {
     return this.data[index];
   }
+  pop() {
+    delete this.data[this.length - 1];
+    this.length--;
+  }
 }
 
 const newArray = new MyArray();
 newArray.push("hello world");
 newArray.getItem(0);
-// newArray.pop();
+newArray.pop();
 // newArray.push("hello world2");
 // newArray.push("hello world3");
 // newArray.delete(1);
