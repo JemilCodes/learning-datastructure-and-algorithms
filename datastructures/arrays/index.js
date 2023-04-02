@@ -14,10 +14,14 @@ class MyArray {
     this.data[this.length] = item;
     this.length++;
   }
+  getItem(index) {
+    return this.data[index];
+  }
 }
 
 const newArray = new MyArray();
 newArray.push("hello world");
+newArray.get(0);
 // newArray.pop();
 // newArray.push("hello world2");
 // newArray.push("hello world3");
