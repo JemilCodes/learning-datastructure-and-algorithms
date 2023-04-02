@@ -10,10 +10,14 @@ class MyArray {
     delete this.data[this.length - 1];
     this.length--;
   }
+  push(item) {
+    this.data[this.length] = item;
+    this.length++;
+  }
 }
 
 const newArray = new MyArray();
-// newArray.push("hello world");
+newArray.push("hello world");
 // newArray.pop();
 // newArray.push("hello world2");
 // newArray.push("hello world3");
