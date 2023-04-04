@@ -14,4 +14,13 @@ class myClass {
     this.data[index] = [key, value];
     return this.data[index];
   }
+  get(key) {
+    const index = this._hash(key);
+    return this.data[index];
+  }
 }
+
+const hashTable = new myClass(50);
+hashTable.set("grapes", 1000);
+hashTable.set("yams", 100000);
+console.log(hashTable.get("yams"));
