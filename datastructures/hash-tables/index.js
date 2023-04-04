@@ -9,4 +9,9 @@ class myClass {
     }
     return hash;
   }
+  set(key, value) {
+    const index = this._hash(key);
+    this.data[index] = [key, value];
+    return this.data[index];
+  }
 }
