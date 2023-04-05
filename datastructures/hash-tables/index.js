@@ -11,16 +11,27 @@ class myClass {
   }
   set(key, value) {
     const index = this._hash(key);
-    this.data[index] = [key, value];
+    if (!this.data[index]) {
+      this.data[index] = [];
+    }
+    this.data[index].push([key, value]);
     return this.data[index];
   }
   get(key) {
     const index = this._hash(key);
-    return this.data[index];
+    let currentBucket = this.data[index];
+    if (!currentBucket) {
+      return undefined;
+    }
+    for (let i = 0; i < currentBucket.length; i++) {
+      if (currentBucket[i][0] === key) {
+        return currentBucket[i][1];
+      }
+    }
   }
 }
 
-const hashTable = new myClass(50);
+const hashTable = new myClass(1);
 hashTable.set("grapes", 1000);
-hashTable.set("yams", 100000);
-console.log(hashTable.get("yams"));
+hashTable.set("grapess", 10000);
+console.log(hashTable.get("grapess"));
