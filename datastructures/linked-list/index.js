@@ -7,6 +7,16 @@ class myClass {
     this.tail = this.head;
     this.length = 1;
   }
+  append(value) {
+    let newNode = {
+      value,
+      next: null,
+    };
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this;
+  }
   prepend(value) {
     let newNode = {
       value,
@@ -56,9 +66,9 @@ class myClass {
 
 const linkedList = new myClass(5);
 linkedList.prepend(10)
-// linkedList.append(15);
-// linkedList.append(20);
-// linkedList.insert(2, 25);
+linkedList.append(15);
+linkedList.append(20);
+linkedList.insert(2, 25);
 // linkedList.remove(3);
 // linkedList.reverse()
 // linkedList.printList();
