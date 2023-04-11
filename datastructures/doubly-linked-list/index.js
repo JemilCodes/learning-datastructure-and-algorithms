@@ -8,6 +8,18 @@ class myClass {
     this.tail = this.head;
     this.length = 1;
   }
+  append(value) {
+    let newNode = {
+      value,
+      next: null,
+      prev: this.tail,
+    };
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    // console.log(newNode);
+    return this;
+  }
 }
 
 const linkedList = new myClass(5);
