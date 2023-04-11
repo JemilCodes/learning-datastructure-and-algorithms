@@ -69,13 +69,31 @@ class myClass {
     leader.next = holdingPointer;
     this.length--
   }
+  reverse() {
+    if (!this.head.next) {
+      return this.head
+    }
+    let first = this.head
+    this.tail = this.head
+    let second  = first 
+
+    while (second) {
+      const temp = second.next
+      second.next = first
+      first = second
+      second = temp
+    }
+    this.head.next = null
+    this.head = first
+    return this
+  }
 }
 
 const linkedList = new myClass(5);
 linkedList.prepend(10)
 linkedList.append(15);
 linkedList.append(20);
-linkedList.insert(2, 25);
+// linkedList.insert(2, 25);
 // linkedList.remove(3);
-// linkedList.reverse()
-// linkedList.printList();
+linkedList.reverse()
+linkedList.printList();
