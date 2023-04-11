@@ -40,6 +40,15 @@ class myClass {
     }
     return currentNode;
   }
+  printList() {
+    let array = [];
+    let currentNode = this.head;
+    while (currentNode !== null) {
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    console.log(array);
+  }
 }
 
 const linkedList = new myClass(5);
