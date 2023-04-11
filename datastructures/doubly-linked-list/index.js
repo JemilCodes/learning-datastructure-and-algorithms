@@ -20,6 +20,16 @@ class myClass {
     // console.log(newNode);
     return this;
   }
+  prepend(value) {
+    let newNode = {
+      value,
+      next: this.head,
+      prev: null,
+    };
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
 }
 
 const linkedList = new myClass(5);
