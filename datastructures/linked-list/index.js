@@ -35,6 +35,23 @@ class myClass {
     }
     console.log(array);
   }
+  
+  insert(index, value) {
+    if (index >= this.length) {
+      const value = this.append(value)
+      this.length++
+      return value
+    }
+    let newNode = {
+      value,
+      next: null,
+    };
+    let leader = this.traverseToIndex(index - 1);
+    let holdingPointer = leader.next;
+    leader.next = newNode;
+    newNode.next = holdingPointer;
+    this.length++;
+  }
 }
 
 const linkedList = new myClass(5);
