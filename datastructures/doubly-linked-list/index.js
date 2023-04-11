@@ -70,6 +70,14 @@ class myClass {
     console.log(newNode);
     this.length++;
   }
+  remove(index) {
+    let leader = this.traverseToIndex(index - 1);
+    let holdingPointer = leader.next.next;
+    delete leader.next;
+    leader.prev = leader;
+    leader.next = holdingPointer;
+    this.length--;
+  }
 }
 
 const linkedList = new myClass(5);
