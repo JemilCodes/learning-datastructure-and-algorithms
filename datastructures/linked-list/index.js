@@ -62,6 +62,13 @@ class myClass {
     newNode.next = holdingPointer;
     this.length++;
   }
+  remove(index) {
+    let leader = this.traverseToIndex(index-1);
+    let holdingPointer = leader.next.next;
+    delete leader.next;
+    leader.next = holdingPointer;
+    this.length--
+  }
 }
 
 const linkedList = new myClass(5);
